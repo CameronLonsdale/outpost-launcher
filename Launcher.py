@@ -32,6 +32,15 @@ def has_executable():
             out = True
     return out
 
+def run_executable():
+    for file in os.listdir('.'):
+        if os.path.splitext(file)[0] == "Outpost":
+            if get_platform_name() == "Win32":
+                subprocess.Popen(file)
+            else:
+                subprocess.Popen("./" + file)
+            return
+
 def has_zip():
     return os.path.exists(DOWNLOAD_TARGET)
 
@@ -157,7 +166,7 @@ class App(Tk):
         self.progressbar["value"] = 1
     
     def play(self):
-        subprocess.Popen("Outpost")
+        run_executable()
         self.destroy()
 
 if __name__ == "__main__":

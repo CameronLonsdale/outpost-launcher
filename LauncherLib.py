@@ -68,7 +68,8 @@ class Stream():
             return
         
         if chunk:
-            self.result += chunk
+            if self.result != None:
+                self.result += chunk
             self.progress += self.chunk_size
         return chunk
     
@@ -81,6 +82,7 @@ class Download(Stream):
     def __init__(self, url, target, chunk_size=2**12):
         Stream.__init__(self, url, chunk_size)
         self.file = open(target, "wb")
+        self.result = None
     
     def update(self):
         chunk = Stream.update(self)

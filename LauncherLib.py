@@ -3,6 +3,7 @@ import platform
 import requests
 import zipfile
 import tempfile
+import subprocess
 from base64 import b64decode as decode
 
 class Icon():

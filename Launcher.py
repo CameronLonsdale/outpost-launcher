@@ -20,7 +20,7 @@ DOWNLOAD_TARGET = ".tmp_download.zip"
 TITLE = "Outpost Launcher"
 
 INFO = u"Outpost Launcher \u00A9 Outpost Software"
-VERSION = "V0.1"
+VERSION = "V1.0"
 
 def get_download_url(version):
     return "".join([DOWNLOADS, "Outpost_", get_platform_name(), "_V", version, ".zip"])
